@@ -1,4 +1,4 @@
-# 🔏 PrivacyLens — AI Privacy Policy Summarizer
+# PrivacyLens — AI Privacy Policy Summarizer
 
 A Chrome extension that instantly analyzes and summarizes any website's privacy policy using AI. 
 
