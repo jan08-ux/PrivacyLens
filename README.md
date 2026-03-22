@@ -50,7 +50,7 @@ The extension icon will appear in your Chrome toolbar.
 4. Click **Save**
 
 
-## 🧪 How to Use
+## How to Use
 
 1. Navigate to any website or its privacy policy page
 2. Click the **PrivacyLens** extension icon
@@ -62,7 +62,7 @@ The extension icon will appear in your Chrome toolbar.
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ```
 PrivacyLens/
@@ -98,7 +98,6 @@ PrivacyLens/
 ## Privacy & Security
 
 - Your AIPipe token is stored in `chrome.storage.local` — only on your device
-- Page text is sent to AIPipe/Anthropic for analysis (same as using Claude.ai)
 - No data is stored on any external server by this extension
 - Analysis results are cached locally per URL for faster repeat access
 
