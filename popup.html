@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Summarizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="shell">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🔏</span>
+        <div>
+          <div class="logo-title">PrivacyLens</div>
+          <div class="logo-sub">AI Policy Summarizer</div>
+        </div>
+      </div>
+      <button class="settings-btn" id="settingsToggle" title="Settings">⚙</button>
+    </header>
+
+    <!-- Settings panel -->
+    <div class="settings-panel" id="settingsPanel">
+      <label class="field-label">Anthropic API Key</label>
+      <div class="key-row">
+        <input type="password" id="apiKeyInput" class="api-input" placeholder="AIPipe token..." />
+        <button class="save-btn" id="saveKey">Save</button>
+      </div>
+      <p class="settings-hint">Get your token at aipipe.org/login — stored locally, never shared.</p>
+    </div>
+
+    <!-- Site info -->
+    <div class="site-bar" id="siteBar">
+      <span class="site-icon">🌐</span>
+      <span class="site-url" id="siteUrl">Loading...</span>
+    </div>
+
+    <!-- Main area -->
+    <main class="main" id="mainArea">
+      <div class="idle-state" id="idleState">
+        <div class="idle-icon">🛡</div>
+        <p class="idle-title">Analyze this page's privacy policy</p>
+        <p class="idle-desc">Click below to extract and summarize the privacy policy of the current site using AI.</p>
+        <button class="analyze-btn" id="analyzeBtn">
+          <span class="btn-icon">✦</span> Analyze Privacy Policy
+        </button>
+      </div>
+
+      <div class="loading-state hidden" id="loadingState">
+        <div class="spinner-wrap">
+          <div class="spinner"></div>
+        </div>
+        <p class="loading-label" id="loadingLabel">Extracting policy text…</p>
+      </div>
+
+      <div class="result-state hidden" id="resultState">
+        <div class="risk-badge" id="riskBadge">
+          <span id="riskIcon">●</span>
+          <span id="riskLabel">–</span>
+        </div>
+
+        <div class="summary-scroll">
+          <section class="summary-section">
+            <h3 class="section-title">📋 Summary</h3>
+            <p class="section-body" id="summaryText"></p>
+          </section>
+
+          <section class="summary-section">
+            <h3 class="section-title">🚩 Key Concerns</h3>
+            <ul class="concern-list" id="concernList"></ul>
+          </section>
+
+          <section class="summary-section">
+            <h3 class="section-title">✅ Positive Aspects</h3>
+            <ul class="positive-list" id="positiveList"></ul>
+          </section>
+
+          <section class="summary-section">
+            <h3 class="section-title">💡 Bottom Line</h3>
+            <p class="section-body bottom-line" id="bottomLine"></p>
+          </section>
+        </div>
+
+        <button class="re-analyze-btn" id="reAnalyzeBtn">↺ Re-analyze</button>
+      </div>
+
+      <div class="error-state hidden" id="errorState">
+        <div class="error-icon">⚠</div>
+        <p class="error-msg" id="errorMsg">Something went wrong.</p>
+        <button class="retry-btn" id="retryBtn">Try Again</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
