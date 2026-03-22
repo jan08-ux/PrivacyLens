@@ -121,4 +121,3 @@ MIT License — free to use, modify, and distribute.
 
 ---
 
-> Built with ❤️ using Claude AI + AIPipe
